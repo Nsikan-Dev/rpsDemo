@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Rock, Paper, Scissors!!
+{% endblock %}
+
+{% block body %}
+    <div>
+    <form action="{{ url_for('acceptPlayerTwoName') }}" method="post">
+        <label for="html">Player 1:</label>
+        <input type="text" name ="player_one_name_input" readonly value="{{ playerOne }}"><br><br>
+        <label for="html">Player 2:</label>
+        <input type="text" name ="player_two_name_input" placeholder="Enter Player 2's name"><br><br>
+        <button>Submit</button>
+    </form>
+    </div>
+{% endblock %}

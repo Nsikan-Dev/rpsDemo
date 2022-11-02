@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Rock, Paper, Scissors!! Game {{ gameId }} 
+{% endblock %}
+
+{% block body %}
+    <div>
+        Score: {{ playerOne }} {{ player1Score }} - {{ playerTwo }} {{ player2Score }}
+    </div>
+    <div>
+        <label for="html">{{ playerTwo }}, please make your selection</label><br><br>
+    <form action="{{ url_for('acceptPlayerTwoSelection') }}" method="post">
+        <input type="radio" id="rock" name="rps" value="rock">
+        <label for="html">Rock</label><br>
+        <input type="radio" id="paper" name="rps" value="paper">
+        <label for="css">Paper</label><br>
+        <input type="radio" id="scissors" name="rps" value="scissors">
+        <label for="javascript">Scissors</label><br><br>
+        <input type="hidden" id="playerOneSelection" name="player_one_selection" value="{{ player1Selection }}">
+        <button>Submit</button>
+    </form>
+    </div>
+{% endblock %}

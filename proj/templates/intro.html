@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Rock, Paper, Scissors!!
+{% endblock %}
+
+{% block body %}
+    <div>
+        Start a new game <br><br>
+    <form action="{{ url_for('enterPlayerTwoName') }}" method="post">
+        <input type="text" name ="player_name_input" placeholder="Enter Player 1's name"><br><br>
+        <input type="radio" name ="computer_input">
+        <label for="fname">Select if Player 2 is computer</label><br><br>
+        <button>Submit</button>
+        <input type="reset">
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+Functionality
+- Allow two players to enter their names
+	- One player can be the computer
+- Players make selection one at a time
+- Notify winner, increment score
+- Users must be able to save game
+	- Retrieve games?
+
+Flow
+- Enter names, one at a time
+	- Give option to select computer as player 2
+- Save names to DB
+	- Create game record with score as 0 - 0
+- Accept player selection(s)
+	- Determine winner and notify
+	- Update score
+	- Store selections?
+- End Game
+
+
+Backend Functions (Remember to log)
+- InitializeGameRecord 
+- SavePlayerNames(Player1, Player2)
+	- Player 2 can be computer
+- SavePlayerSelection(Player,GameInstance,Position,Selection,Turn)
+	Store selection for this turn
+	- if Position == 2
+		- compute winner
+		- update score
+
+Objects
+- Turn Class
+- Game Class
+
+Testing functionality
+DockerFile
+ReadMe.md
+
+
+UI
+- Start Page
+	- New game 
+	- Find results?
+- Player name entry page
+- Selection page
+- Results page 
+	- Play another turn
+	- New game
+

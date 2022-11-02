@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Rock, Paper, Scissors!! Game {{ gameId }} 
+{% endblock %}
+
+{% block body %}
+    <div>
+        {% if winner %}
+            {{ winner }} wins!!<br><br>
+        {% else %}
+            Draw!! <br><br>
+        {% endif %}
+        Score: {{ playerOne }} {{ player1Score }} - {{ playerTwo }} {{ player2Score }}
+    </div>
+    <div>
+        <label for="html">Would you like to continue?</label><br><br>
+        <form action="{{ url_for('continueOrNot') }}" method="post">
+            <input type="radio" id="new_game" name="rps" value="new_game">
+            <label>End current game / Start a new game</label><br><br>
+            <input type="radio" id="new_turn" name="rps" value="new_turn">
+            <label>Start another turn in current game</label><br><br>
+            <button>Submit</button>
+        </form>
+    </div>
+{% endblock %}
